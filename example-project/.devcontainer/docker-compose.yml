@@ -1,0 +1,22 @@
+services:
+  cloudlet-k8s-dev-container:
+    container_name: CloudletK8sDevContainer
+    image: ghcr.io/maxotta/kiv-cloudlet-k8s-dev-container:latest
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    volumes:
+      - "../config:/etc/cloudlet-config:ro"
+      - "../..:/workspace"
+    extra_hosts:
+      - "gw:10.88.99.254"
+      - "pi1:10.88.99.1"
+      - "pi2:10.88.99.2"
+      - "pi3:10.88.99.3"
+      - "pi4:10.88.99.4"
+      - "pi5:10.88.99.5"
+volumes:
+  cloudlet-k8s-dev-container-data:
+    external: false
+
