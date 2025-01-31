@@ -53,6 +53,7 @@ COPY init-dev-container.sh /etc
 COPY help.txt /etc
 
 RUN echo '. /etc/init-dev-container.sh' >> /root/.bashrc
+RUN echo 'LANG=C.UTF-8' > /etc/default/locale
 
 WORKDIR ${WORKSPACE_DIR}
 
@@ -65,6 +66,7 @@ ENV OPENVPN_CONFIG ${CONFIG_DIR}/OpenVPN-Config.ovpn
 ENV ENV_CONFIG ${CONFIG_DIR}/.env
 ENV SHELL /bin/bash
 ENV ANSIBLE_HOST_KEY_CHECKING False
+ENV LC_ALL C.UTF-8
 
 # Prevent the container to exit
 CMD [ "sleep", "infinity" ]
