@@ -23,6 +23,7 @@ RUN add-apt-repository --yes --update ppa:ansible/ansible
 RUN apt update
 RUN apt-get -y install ansible
 RUN apt-get -y install ansible-lint
+RUN apt-get -y install python3-kubernetes
 
 # Install OpenVPN client necessary to connect to the RPi cloudlet
 RUN apt-get -y install openvpn
