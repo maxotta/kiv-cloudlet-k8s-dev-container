@@ -1,7 +1,7 @@
 test -f /root/.ssh || mkdir -p /root/.ssh ; chmod 700 /root/.ssh
 cp -f ${PROJECT_DIR}/config/id_* /root/.ssh
 
-export LC_ALL="C"
+export LC_ALL="C.UTF-8"
 export PATH=$PATH:/usr/games
 
 set -a
