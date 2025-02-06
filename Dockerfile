@@ -25,6 +25,9 @@ RUN apt-get -y install ansible
 RUN apt-get -y install ansible-lint
 RUN apt-get -y install python3-kubernetes
 
+# Install 'jq', a command-line JSON processing tool
+RUN apt-get -y install jq
+
 # Install OpenVPN client necessary to connect to the RPi cloudlet
 RUN apt-get -y install openvpn
 
