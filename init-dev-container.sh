@@ -1,4 +1,5 @@
-test -f /root/.ssh || mkdir -p /root/.ssh ; chmod 700 /root/.ssh
+test -f /root/.ssh || mkdir -p /root/.ssh
+chmod -R 700 /root/.ssh
 cp -f ${PROJECT_DIR}/config/id_* /root/.ssh
 
 export LC_ALL="C.UTF-8"
