@@ -42,10 +42,7 @@ RUN apt-get -y install kubectl
 RUN apt-get -y install kubeadm
 
 # Install Helm
-RUN curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | tee /usr/share/keyrings/helm.gpg > /dev/null
-RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list
-RUN apt-get update
-RUN apt-get -y install helm
+RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4 | bash
 
 # Install other fancy stuff
 RUN apt-get -y install inetutils-ping
